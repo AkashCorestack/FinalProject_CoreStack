@@ -1,0 +1,24 @@
+<!-- <div *ngFor="let i of v1">
+    <label >{{i.label}}</label>
+
+
+    <input type= {{i.type}} id={{i.id}} class={{i.class}}>
+
+    
+</div> -->
+
+<!-- <form action="" (submit)="fn1()" [formGroup]="">
+
+     
+</form> -->
+<form  (submit)="login()" [formGroup]="lf">
+
+    <div *ngFor="let i of val1 " >
+        
+    <input   formControlName = {{i.fcn}} id={{i.id}} type={{i.type}} placeholder={{i.label}} value={{i.label}}>
+
+   <!-- <ng-container *ngIf="lf.get('name1')?.invalid &&  lf.get('name1')?.touched">INVALID</ng-container> -->
+
+    </div>
+</form>
+

@@ -1,0 +1,39 @@
+<nav class="navbar navbar-expand-lg navbar-light navbar-laravel">
+  <div class="container">
+    <a class="navbar-brand" href="#">Todo List</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+      aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto">
+
+        <div *ngIf="login == true; then thenBlock else elseBlock"></div>
+        <ng-template #thenBlock>
+          <!-- <li class="nav-item"> -->
+            <a class="navbar-brand">Hello, {{valu}} </a>
+          <!-- </li> -->
+           <li class="nav-item">
+             <a class="nav-link" routerLink="/home">My Tasks</a>
+           </li>
+           <li class="nav-item">
+             <a class="nav-link" routerLink="/signup" (click)="logout()">Logout </a>
+           </li>
+        </ng-template>
+        <ng-template #elseBlock>
+                    <li class="nav-item">
+                      <a class="nav-link" routerLink="/login">Login</a>
+                    </li>
+
+          <li class="nav-item">
+            <a class="nav-link" routerLink="/signup">Register</a>
+          </li>
+        </ng-template>
+
+       
+      </ul>
+
+    </div>
+  </div>
+</nav>

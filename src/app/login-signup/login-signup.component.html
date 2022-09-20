@@ -1,0 +1,61 @@
+<app-header>
+
+</app-header>
+<html class="all">
+
+<div id="boxx">
+<main class="login-form">
+  <div class="cotainer">
+    <div class="row justify-content-center  boxx">
+      <div class="col-md-4">
+        <div class="card">
+          <div class="card-header">Login</div>
+          <div class="card-body">
+            <form (submit)="login()" [formGroup]="lf"> 
+              <div class="form-group row" *ngFor="let i of val1">
+                
+                <label for={{i.for1}} class={{i.clslabel}}>{{i.lbldta}}</label>
+                <div class={{i.indiv}}>
+                  <input type={{i.type}} id={{i.id}} class={{i.inpclass}} name={{i.name}} formControlName="{{i.fcn}}">
+                </div>
+              </div>
+
+
+              <div class="form-group row">
+                <div class="col-md-6 offset-md-4">
+                  <div class="checkbox">
+                    <ng-container *ngIf="val">
+                   <label>
+
+                   </label>
+                      <input type="checkbox" name="remember"> Remember Me
+                    </ng-container>
+                  </div>
+                </div>
+              </div>
+
+              <div class="col-md-6 offset-md-4">
+                <button type="submit" class="btn btn-outline-danger">
+                  Login
+                </button>
+
+
+                <a href="#" class="btn btn-link">
+                  Forgot Your Password?
+                </a>
+              </div>
+            </form>
+          </div>
+      
+        </div>
+      </div>
+    </div>
+  </div>
+  
+
+</main>
+
+
+</div>
+
+</html>

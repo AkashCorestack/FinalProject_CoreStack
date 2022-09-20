@@ -1,0 +1,83 @@
+<!-- <div class="example-box" cdkDrag>
+  Drag me around
+</div> -->
+<html class="all">
+<app-header >
+    
+</app-header>
+<div *ngIf="lgn; then thenBlock else elseBlock">  </div>
+<ng-template #thenBlock>
+  <ng-container *ngIf="ln==0">
+  <div class="alert alert-success" id="txt1">
+    Hurray All tasks done 
+  </div>
+  </ng-container>
+
+  <html [ngClass]="getName()">
+  <div [ngClass]="getName()">
+    <div class="input-group mb-3">
+      <div class="input-group-prepend">
+      </div>
+      <input type="text" class="form-control" aria-label="Default" aria-describedby="inputGroup-sizing-default"
+        [(ngModel)]="valu" placeholder="Add IN LIST..............." [ngClass]="getName()">
+      <button (click)="subm()" class="btn btn-primary">Add IN LIST</button>
+
+    </div>
+
+
+
+    <div class="example-container">
+
+      <h2>To do</h2>
+
+      <div cdkDropList #todoList="cdkDropList" [cdkDropListData]="todo" [cdkDropListConnectedTo]="[doneList]"
+        class="example-list" (cdkDropListDropped)="drop($event)">
+        <div class="example-box" *ngFor="let item of todo" cdkDrag [ngClass]="getName()">{{item}}
+           <fa-icon [icon]="edt" class="delt"></fa-icon>
+       
+        </div>
+      </div>
+    </div>
+ 
+
+    <div class="example-container">
+      <h2>Tasks Done -
+        <button (click)="clr()" class="btn btn-danger">Clear</button>
+
+      </h2>
+
+      <div cdkDropList #doneList="cdkDropList" [cdkDropListData]="done" [cdkDropListConnectedTo]="[todoList]"
+        class="example-list " (cdkDropListDropped)="drop($event)">
+        <div class="example-box txtdecor " *ngFor="let item of done" cdkDrag [ngClass]="getName()">{{item}}
+          <button (click)="del(item)">
+            <fa-icon [icon]="filmIcon" class="delt"></fa-icon>
+          </button>
+
+        </div>
+      </div>
+
+    </div>
+       <div class="circ">
+         <div role="progressbar" aria-valuemin="0" aria-valuemax="100" style="--value: {{ fin }}" class="prg"><b>Pending
+              {{ ln }} </b> </div>
+
+         <div role="progressbar" aria-valuemin="0" aria-valuemax="100" style="--value: {{fin2}}" class="prg"><b>Compleated {{ln2 }}
+           </b></div>
+
+       </div>
+
+    <div>
+      <button class="btn btn-primary" (click)="fncchk()"> Dark mode</button>
+    </div>
+
+
+  </div>
+  </html>
+</ng-template>
+
+
+<ng-template #elseBlock>
+  <h1>Please Login First to view this content . </h1>
+</ng-template>
+
+</html>
